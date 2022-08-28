@@ -4,6 +4,7 @@ import Navbar from './components/Shared/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import ProductDetail from './components/Products/ProductDetail';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='product/:id' element={<ProductDetail/>}></Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

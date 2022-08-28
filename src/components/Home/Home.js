@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
-import Products from './Products';
+import Products from '../Products/Products';
 import { TbPackgeImport, TbTruckDelivery, TbTruckReturn } from 'react-icons/tb';
 import { AiOutlineDeliveredProcedure } from 'react-icons/ai';
 
