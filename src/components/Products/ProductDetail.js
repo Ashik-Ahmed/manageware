@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loading from '../Shared/Loading/Loading';
 
 const ProductDetail = () => {
 
@@ -8,10 +9,18 @@ const ProductDetail = () => {
     const [product, setProduct] = useState();
 
     useEffect(()=>{
-        fetch( `http://localhost:5000/product/${id}`)
+        fetch( `http://localhost:5000/product/${id}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[id])
+
+    if(!product){
+        return <Loading/>
+    }
 
     return (
         <div>

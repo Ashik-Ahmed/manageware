@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useProducts from '../../hooks/useProducts';
+import Loading from '../Shared/Loading/Loading';
 import Product from './Product';
 
 const Products = () => {
@@ -12,11 +13,9 @@ const Products = () => {
     const [products, setProducts] = useProducts();
 
 
-    // if(!products){
-    //     return (
-    //         <p className='text-5xl font-semibold'>Loading......</p>
-    //     )
-    // }
+    if(!products){
+        return <Loading/>
+    }
 
     return (
         <div className='grid grid-cols-3 gap-12 mt-5 container mx-auto'>
