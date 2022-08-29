@@ -70,11 +70,11 @@ const Navbar = () => {
                         authUser ? 
                         
                         <div>
-                            <button onClick={handleSignout} className='btn btn-warning'>Signout</button>
+                            <button onClick={handleSignout} className='btn btn-warning btn-sm'>Signout</button>
                             <p className='text-xs'>{authUser.email}</p>
                         </div>
                         :
-                        <Link to='/login' className="btn">Login</Link>
+                        <Link to='/login' className="btn btn-sm">Login</Link>
                     }
                 </div>
             </div>

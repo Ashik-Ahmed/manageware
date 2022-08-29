@@ -1,82 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Loading from '../Shared/Loading/Loading';
-import { useQuery } from '@tanstack/react-query';
+import React from 'react';
 
-const ProductDetail = () => {
-
-    const {id} = useParams();
-
-    const [product, setProduct] = useState();
-    // const [updatedQuantity, setUpdatedQuantity] = useState();
-    let updatedQuantity;
-
-    const {data:produc, isLoading, refetch} = useQuery('produc', ()=>fetch(`http://localhost:5000/product/${id}`,{
-        method:'GET',
-        headers:{
-            authorization:`Bearer ${localStorage.getItem('accessToken')}`
-        }
-    }).then(res=>res.json()))
-
-    console.log(produc)
-    
-
-    useEffect(()=>{
-        fetch( `http://localhost:5000/product/${id}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res=>res.json())
-        .then(data=>setProduct(data))
-    },[id])
-
-    const handleRestock=(e)=>{
-        e.preventDefault();
-        const quantity = parseInt(e.target.restockQuantity.value) + parseInt(product.quantity);
-        updatedQuantity = quantity;
-        handleProductUpdate();
-        e.target.reset();
-    }
-    
-    const handleDelivered=()=>{
-        updatedQuantity = (product.quantity-1);
-        handleProductUpdate();
-        console.log('delivered clicked')
-    }
-
-    // console.log(updatedQuantity)
-
-    
-   const handleProductUpdate=()=>{
-    const updatedProduct = {updatedQuantity};
-    console.log(updatedProduct)
-
-        const url=`http://localhost:5000/update-product/${id}`;
-
-        fetch(url, {
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(updatedProduct)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-        })
-   }
-
-    if(!product){
-        return <Loading/>
-    }
-
+const DetailsModal = ({product}) => {
     return (
         <div>
+            <input type="checkbox" id="details-modal" class="modal-toggle" />
+            <div class="modal">
+            <div class="modal-box w-11/12 max-w-5xl">
+            <label for="details-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <div>
             <section class="text-gray-600 body-font overflow-hidden text-left">
-                <div class="container px-5 py-8 mx-auto">
+                <div class="container px-5 mx-auto">
                         <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-center rounded" src={product.image}/>
+                        <img alt="Product" class="lg:w-1/2 w-full lg:h-auto h-64 object-center rounded" src={product.image}/>
                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 class="text-sm title-font text-gray-500 tracking-widest">{product.supplier}</h2>
                             <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>
@@ -143,30 +78,29 @@ const ProductDetail = () => {
                                     <path d="M6 9l6 6 6-6"></path>
                                     </svg>
                                 </span>
-                                
+                                </div>
+                            </div>
+                            </div>
+                            {/* <div class="flex">
+                            <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
                             <button class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                                 </svg>
                             </button>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="flex">
-                            <div class="form-control">
-                            <form class="input-group" onSubmit={handleRestock}>
-                                <input name='restockQuantity' type="number" placeholder="Quantity" class="input input-bordered" required/>
-                                <button class="px-2 text-white bg-indigo-500 hover:bg-indigo-600 border-0">Restock</button>
-                            </form>
-                            </div>
-                            <button onClick={handleDelivered} class="flex items-center ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">Delivered</button>
-                            </div>
+                            </div> */}
                         </div>
                         </div>
                 </div>
             </section>
         </div>
+                <div class="modal-action">
+                {/* <label for="details-modal" class="btn">Yay!</label> */}
+                </div>
+            </div>
+            </div>
+        </div>
     );
 };
 
-export default ProductDetail;
+export default DetailsModal;

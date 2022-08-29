@@ -16,9 +16,9 @@ const AddItems = () => {
         const quantity = e.target.quantity.value;
         const description = e.target.description.value;
         const supplier = e.target.supplier.value;
-        const photo = e.target.photo.value;
+        const image = e.target.photo.value;
 
-        const product = { email, name, price, quantity, description, supplier, photo };
+        const product = { email, name, price, quantity, description, supplier, image };
 
         //send data to the server
         fetch('http://localhost:5000/add-product', {

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProductRow = ({product}) => {
+const ProductRow = ({product, setModal}) => {
 
-    const {index, name, image, description, supplier, price, quantity} = product;
+    const {_id, name, image, description, supplier, price, quantity} = product;
 
     return (
         <tr>
@@ -11,9 +12,9 @@ const ProductRow = ({product}) => {
             <td>{quantity}</td>
             <td>{supplier}</td>
             <td className='flex gap-x-3'>
-                <button className='btn btn-xs btn-secondary'>Update</button>
-                <button className='btn btn-xs btn-info'>Details</button>
-                <button className='btn btn-xs btn-error'>Delete</button>
+                <Link to={`/product/${_id}`} className='btn btn-xs btn-secondary'>Update</Link>
+                <label onClick={() => setModal(product)} for="details-modal" class="btn btn-xs btn-error modal-button" className='btn btn-xs btn-info'>Details</label>
+                <label onClick={() => setModal(product)} for="delete-modal" class="btn btn-xs btn-error modal-button">Delete</label>
             </td>
         </tr>
     );

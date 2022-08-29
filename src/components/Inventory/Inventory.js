@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import Loading from '../Shared/Loading/Loading';
+import DeleteModal from './DeleteModal';
+import DetailsModal from './DetailsModal';
 import ProductRow from './ProductRow';
 
 const Inventory = () => {
 
     const [products] = useProducts()
+    const [modal, setModal] = useState(null);
+
+    const handleProductDelete =()=>{
+        console.log("deleted product")
+    }
 
     if(!products){
         return <Loading/>
@@ -15,9 +22,9 @@ const Inventory = () => {
 
     return (
         <div className='bg-gray-200'>
-            <div class="overflow-x-auto p-6">
+            <div class="overflow-x-auto p-6 w-11/12 mx-auto">
                 <div className='flex justify-between py-1'>
-                    <p className='text-left text-xl font-semibold'>Inventory</p>
+                    <p className='text-left text-xl font-semibold ml-2'>Inventory</p>
                     <Link to='/add-item' className='btn btn-sm text-left bg-indigo-500 hover:bg-indigo-600 border-0 '>Add New Item</Link>
                 </div>
                 <table class="table table-fixed table-compact table-zebra w-full">
@@ -32,7 +39,18 @@ const Inventory = () => {
                     </thead>
                     <tbody>
                     {
-                        products?.map(product=> <ProductRow key={product._id} product={product}></ProductRow>)
+                        products?.map(product=> <ProductRow key={product._id} product={product} setModal={setModal}></ProductRow>)
+                    }
+                    {
+                         
+                        modal && <DeleteModal product={modal} handleProductDelete={handleProductDelete}></DeleteModal>
+                        
+                    }
+
+                    {
+                         
+                        modal && <DetailsModal product={modal}></DetailsModal>
+                        
                     }
                     </tbody>
                 </table>
