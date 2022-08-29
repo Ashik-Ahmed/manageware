@@ -1,9 +1,10 @@
 import React from 'react';
+import cover from '../../images/cover-photo.jpg'
 
 const Banner = () => {
     return (
         <div>
-            <div class="hero min-h-screen" style={{ "background-image": "url(https://i.ibb.co/XLmdHt9/cover-photo.jpg);" }}>
+            <div class="hero min-h-screen" style={{ "background-image": `url(${cover});` }}>
                 <div class="hero-overlay bg-opacity-60"></div>
                 <div class="hero-content text-center text-neutral-content">
                     <div class="max-w-md">

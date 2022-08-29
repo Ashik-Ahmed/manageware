@@ -20,7 +20,7 @@ const Products = () => {
     return (
         <div className='grid grid-cols-3 gap-12 mt-5 container mx-auto'>
             {
-                products?.slice(0, 6).map(product => <Product key={product._id} product={product}></Product>)
+                products?.slice(0, 3).map(product => <Product key={product._id} product={product}></Product>)
             }
         </div>
     );

@@ -8,11 +8,11 @@ const Product = ({product}) => {
     return (
         <div>
             <div class="card card-compact bg-base-100 shadow-xl text-left">
-                <figure><img src="https://i.ibb.co/XLmdHt9/cover-photo.jpg" alt="Shoes" /></figure>
+                <figure><img src={image} className='h-1/2 object-cover' alt="Shoes" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">{name}</h2>
                     <p>{description}</p>
-                    <div className='flex justify-between border-2 font-bold'>
+                    <div className='flex justify-between text-xl font-bold'>
                         <p>${price}</p>
                         <p>{quantity} pcs left</p>
                     </div>

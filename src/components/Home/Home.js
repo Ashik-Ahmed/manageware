@@ -62,7 +62,7 @@ const Home = () => {
                 <div className='md:flex justify-around gap-x-10 w-full'>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-blue-400 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
                                 <TbPackgeImport />
                             </div>
 
@@ -74,7 +74,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-blue-400 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
                                 <TbTruckDelivery />
                             </div>
 
@@ -86,7 +86,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-blue-400 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
                                 <AiOutlineDeliveredProcedure />
                             </div>
 
@@ -98,7 +98,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-blue-400 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
                                 <TbTruckReturn />
                             </div>
 
