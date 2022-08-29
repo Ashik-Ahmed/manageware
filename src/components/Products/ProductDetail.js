@@ -1,35 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 
 const ProductDetail = () => {
 
     const {id} = useParams();
 
-    const [product, setProduct] = useState();
+    // const [product, setProduct] = useState();
     // const [updatedQuantity, setUpdatedQuantity] = useState();
     let updatedQuantity;
 
-    const {data:produc, isLoading, refetch} = useQuery('produc', ()=>fetch(`http://localhost:5000/product/${id}`,{
+    const {data:product, isLoading, refetch} = useQuery('product', ()=>fetch(`http://localhost:5000/product/${id}`,{
         method:'GET',
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res=>res.json()))
-
-    console.log(produc)
-    
-
-    useEffect(()=>{
-        fetch( `http://localhost:5000/product/${id}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res=>res.json())
-        .then(data=>setProduct(data))
-    },[id])
 
     const handleRestock=(e)=>{
         e.preventDefault();
@@ -50,7 +37,6 @@ const ProductDetail = () => {
     
    const handleProductUpdate=()=>{
     const updatedProduct = {updatedQuantity};
-    console.log(updatedProduct)
 
         const url=`http://localhost:5000/update-product/${id}`;
 
@@ -63,7 +49,9 @@ const ProductDetail = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+            if(data.modifiedCount>0){
+               refetch();
+            }
         })
    }
 

@@ -8,14 +8,21 @@ import ProductRow from './ProductRow';
 
 const Inventory = () => {
 
-    const [products] = useProducts()
+    const [products, isLoading, refetch] = useProducts()
     const [modal, setModal] = useState(null);
 
-    const handleProductDelete =()=>{
-        console.log("deleted product")
+    const handleProductDelete =(id)=>{
+
+        fetch(`http://localhost:5000/delete-product/${id}`, {
+            method:'DELETE',
+        }).then(res=>res.json()).then(data=>{
+            refetch();
+        })
+
+        console.log("deleted product", id)
     }
 
-    if(!products){
+    if(isLoading){
         return <Loading/>
     }
 
