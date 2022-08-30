@@ -11,7 +11,6 @@ const Navbar = () => {
     const handleSignout =()=>{
         signOut(auth);
         localStorage.removeItem('accessToken');
-        console.log("signout")
     }
 
     return (
@@ -25,11 +24,10 @@ const Navbar = () => {
                         <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {
                             authUser && <><li><Link to='/inventory'>Inventory</Link></li>
-                            <li><Link to='/my-items'>My Items</Link></li>
-                            <li><a>Dashboard</a></li></>
+                            <li><Link to='/my-items'>My Items</Link></li></>
                         }
-                        <li><a>Blogs</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><Link to='/contact'>Contact Us</Link></li>
                             {/* <li tabindex="0">
                                 <a className="justify-between">
                                     Parent
@@ -42,17 +40,16 @@ const Navbar = () => {
                             </li> */}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">ManageWare</Link>
+                    <Link to='/' className="text-xl font-bold text-indigo-500 ml-4">ManageWare</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                     {
                             authUser && <><li><Link to='/inventory'>Inventory</Link></li>
-                            <li><Link to='/my-items'>My Items</Link></li>
-                            <li><a>Dashboard</a></li></>
+                            <li><Link to='/my-items'>My Items</Link></li></>
                         }
-                        <li><a>Blogs</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><Link to='/contact'>Contact Us</Link></li>
                         {/* <li tabindex="0">
                             <a>
                                 Parent
@@ -70,11 +67,11 @@ const Navbar = () => {
                         authUser ? 
                         
                         <div>
-                            <button onClick={handleSignout} className='btn btn-warning btn-sm'>Signout</button>
+                            <button onClick={handleSignout} className='btn btn-sm bg-accent border-0'>Signout</button>
                             <p className='text-xs'>{authUser.email}</p>
                         </div>
                         :
-                        <Link to='/login' className="btn btn-sm">Login</Link>
+                        <Link to='/login' className="btn btn-sm bg-accent border-0">Login</Link>
                     }
                 </div>
             </div>

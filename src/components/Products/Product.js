@@ -17,7 +17,7 @@ const Product = ({product}) => {
                         <p>{quantity} pcs left</p>
                     </div>
                     <div class="card-actions justify-end">
-                        <Link to={`/product/${_id}`} class="btn btn-sm btn-primary">Update</Link>
+                        <Link to={`/product/${_id}`} class="btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0">Update</Link>
                     </div>
                 </div>
             </div>

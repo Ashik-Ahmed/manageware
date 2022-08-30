@@ -34,7 +34,7 @@ const MyItems = () => {
         <div className='bg-gray-200'>
             <div class="overflow-x-auto p-6 w-11/12 mx-auto">
                 <div className='flex justify-between py-1'>
-                    <p className='text-left text-xl font-semibold ml-2'>My Items</p>
+                    <p className='text-left text-xl text-indigo-500 font-semibold ml-2'>My Items</p>
                     <Link to='/add-item' className='btn btn-sm text-left bg-indigo-500 hover:bg-indigo-600 border-0 '>Add New Item</Link>
                 </div>
                 <table class="table table-fixed table-compact table-zebra w-full">

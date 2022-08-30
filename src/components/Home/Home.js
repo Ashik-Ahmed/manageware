@@ -13,11 +13,36 @@ const Home = () => {
             <Products />
 
 
-            <div className='container mx-auto bg-white p-4 rounded-xl mt-12 mb-4'>
-                <div className='text-left mb-5'>
-                    <p className='text-lg font-semibold'>Top selling Products</p>
+            <div className='container mx-auto p-4 rounded-xl mt-12 mb-4'>
+                <div className='mb-28'>
+                    <p className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Top selling Products</p>
                 </div>
-                <div class="overflow-x-auto">
+
+                <div className='flex justify-between px-24'>
+                <div class="avatar indicator">
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <div class="w-72 h-72 object-cover rounded-lg">
+                    <img src="https://i.ibb.co/9GRyXwV/7.jpg" alt='best' className='object-cover'/>
+                    <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
+                </div>
+                </div>
+                <div class="avatar indicator">
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <div class="w-72 h-72 rounded-lg">
+                    <img src="https://i.ibb.co/j8shM2p/6.jpg" alt='best'/>
+                    <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
+                </div>
+                </div>
+                <div class="avatar indicator">
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <div class="w-72 h-72 rounded-lg">
+                    <img src="https://i.ibb.co/kH06mRJ/5.jpg" alt='best'/>
+                    <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
+                </div>
+                </div>
+                </div>
+
+                {/* <div class="overflow-x-auto">
                     <table class="table w-full">
                         <thead>
                             <tr>
@@ -51,15 +76,15 @@ const Home = () => {
 
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
 
             <div className='py-5 bg-gray-200'>
 
-                <div className='container my-3'>
-                    <p className='text-xl font-semibold'>Order status for last 7 days</p>
+                <div className='container my-3 mx-auto'>
+                <h3 className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Order Status for last 7 days</h3>
                 </div>
-                <div className='md:flex justify-around gap-x-10 w-full'>
+                <div className='md:flex justify-around gap-x-10 w-full mt-6'>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
                             <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
