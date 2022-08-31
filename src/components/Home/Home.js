@@ -9,29 +9,18 @@ import { AiOutlineDeliveredProcedure } from 'react-icons/ai';
 
 const Home = () => {
 
-    const handleDetails=()=>{
-        console.log('Details of card');
-    }
-
     return (
         <div className='bg-gray-200'>
             <Banner />
             <Products />
 
 
-            <div className='container mx-auto p-4 rounded-xl mt-12 mb-4'>
+            <div className='container mx-auto py-4 rounded-xl mt-12 mb-4'>
                 <div className='mb-16'>
-                    <p className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Top selling Products</p>
+                    <p className='text-3xl text-left font-semibold text-white border-b-4 border-indigo-500'>
+                        <span className='bg-indigo-500 pl-1 pr-2'>Best Selling</span>
+                    </p>
                 </div>
-                {/* <div className=''>                    
-                    <div class="container">
-                        <div onClick={handleDetails} class="card_box">
-                            <span></span>
-                            <p className='details btn '>Details</p>
-                        </div>
-                            <button className='btn mt-auto'>Details</button>
-                    </div>
-                </div> */}
 
 
                 <div className='flex justify-between px-24'>
@@ -57,53 +46,19 @@ const Home = () => {
                 </div>
                 </div> 
                 </div>
-
-                {/* <div class="overflow-x-auto">
-                    <table class="table w-full">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Black gear bicycle</th>
-                                <td>$ 250</td>
-                                <td>20</td>
-                                <td>$ 5000</td>
-                            </tr>
-
-                            <tr>
-                                <th>Black gear bicycle</th>
-                                <td>$ 250</td>
-                                <td>20</td>
-                                <td>$ 5000</td>
-                            </tr>
-
-                            <tr>
-                                <th>Black gear bicycle</th>
-                                <td>$ 250</td>
-                                <td>20</td>
-                                <td>$ 5000</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div> */}
             </div>
 
             <div className='py-5 bg-gray-200'>
 
                 <div className='container my-3 mx-auto'>
-                <h3 className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Order Status for last 7 days</h3>
+                <h3 className='text-3xl text-left font-semibold text-white border-b-4 border-indigo-500'>
+                    <span className='bg-indigo-500 pl-1 pr-2'>Today's Order Status</span>
+                </h3>
                 </div>
                 <div className='md:flex justify-around gap-x-10 w-full mt-6'>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-400 p-1 rounded-md'>
                                 <TbPackgeImport />
                             </div>
 
@@ -115,7 +70,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-400 p-1 rounded-md'>
                                 <TbTruckDelivery />
                             </div>
 
@@ -127,7 +82,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-400 p-1 rounded-md'>
                                 <AiOutlineDeliveredProcedure />
                             </div>
 
@@ -139,7 +94,7 @@ const Home = () => {
                     </div>
                     <div className='w-64 bg-white justify-between items-center p-4 rounded-xl'>
                         <div className='flex w-3/4'>
-                            <div className='text-5xl text-white bg-indigo-500 p-1 rounded-md'>
+                            <div className='text-5xl text-white bg-indigo-400 p-1 rounded-md'>
                                 <TbTruckReturn />
                             </div>
 

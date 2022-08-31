@@ -18,8 +18,10 @@ const Products = () => {
 
     return (
        <div className=' mt-5 container mx-auto'>
-        <h3 className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Our Products</h3>
-         <div className='grid md:grid-cols-3 gap-12 mt-8'>
+        <h3 className='text-3xl text-left font-semibold text-white border-b-4 border-indigo-500'>
+            <span className='bg-indigo-500 pl-1 pr-2'>Our Products</span>
+        </h3>
+         <div className='grid md:grid-cols-3 gap-12 mt-4'>
             {
                 products?.slice(0, 3).map(product => <Product key={product._id} product={product}></Product>)
             }

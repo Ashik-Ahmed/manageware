@@ -35,6 +35,8 @@ const MyItems = () => {
 
     // }, [authUser])
 
+
+    //get products by user email
     const {data:myProducts, isLoading, refetch} = useQuery('myProducts', ()=> fetch(`https://manageware-server.vercel.app/myproducts?email=${authUser.email}`,{
         method:'GET',
         headers: {
