@@ -3,10 +3,16 @@ import Banner from './Banner';
 import Products from '../Products/Products';
 import { TbPackgeImport, TbTruckDelivery, TbTruckReturn } from 'react-icons/tb';
 import { AiOutlineDeliveredProcedure } from 'react-icons/ai';
+// import './card.css';
 
 
 
 const Home = () => {
+
+    const handleDetails=()=>{
+        console.log('Details of card');
+    }
+
     return (
         <div className='bg-gray-200'>
             <Banner />
@@ -14,32 +20,42 @@ const Home = () => {
 
 
             <div className='container mx-auto p-4 rounded-xl mt-12 mb-4'>
-                <div className='mb-28'>
+                <div className='mb-16'>
                     <p className='text-3xl font-semibold text-indigo-500 border-b-4 border-indigo-500 inline'>Top selling Products</p>
                 </div>
+                {/* <div className=''>                    
+                    <div class="container">
+                        <div onClick={handleDetails} class="card_box">
+                            <span></span>
+                            <p className='details btn '>Details</p>
+                        </div>
+                            <button className='btn mt-auto'>Details</button>
+                    </div>
+                </div> */}
+
 
                 <div className='flex justify-between px-24'>
                 <div class="avatar indicator">
-                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item p-16"/> 
                 <div class="w-72 h-72 object-cover rounded-lg">
                     <img src="https://i.ibb.co/9GRyXwV/7.jpg" alt='best' className='object-cover'/>
                     <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
                 </div>
                 </div>
                 <div class="avatar indicator">
-                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item p-16"/> 
                 <div class="w-72 h-72 rounded-lg">
                     <img src="https://i.ibb.co/j8shM2p/6.jpg" alt='best'/>
                     <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
                 </div>
                 </div>
                 <div class="avatar indicator">
-                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item h-20 w-20"/> 
+                <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item p-16"/> 
                 <div class="w-72 h-72 rounded-lg">
                     <img src="https://i.ibb.co/kH06mRJ/5.jpg" alt='best'/>
                     <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
                 </div>
-                </div>
+                </div> 
                 </div>
 
                 {/* <div class="overflow-x-auto">

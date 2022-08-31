@@ -15,7 +15,7 @@ const MyItems = () => {
      useEffect(() => {
         const getProducts = async () => {
             const email = authUser.email;
-            const url = `http://localhost:5000/myproducts?email=${email}`;
+            const url = `https://manageware-server.vercel.app/myproducts?email=${email}`;
 
             fetch(url, {
                 headers: {

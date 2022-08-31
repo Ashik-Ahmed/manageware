@@ -40,7 +40,7 @@ const Navbar = () => {
                             </li> */}
                         </ul>
                     </div>
-                    <Link to='/' className="text-xl font-bold text-indigo-500 ml-4">ManageWare</Link>
+                    <Link to='/'><img className='w-36 h-12 rounded-md' src='https://i.ibb.co/MstQS6D/manageware-logo.png' alt='logo'/></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

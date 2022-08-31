@@ -14,7 +14,7 @@ const Product = ({product}) => {
                     <p>{description}</p>
                     <div className='flex justify-between text-xl font-bold'>
                         <p>${price}</p>
-                        <p>{quantity} pcs left</p>
+                        <p className='text-right'>{quantity} pcs left</p>
                     </div>
                     <div class="card-actions justify-end">
                         <Link to={`/product/${_id}`} class="btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0">Update</Link>

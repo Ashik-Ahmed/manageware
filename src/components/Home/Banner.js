@@ -20,7 +20,7 @@ const Banner = () => {
                     <div class="max-w-md">
                         <h1 class="mb-5 text-5xl font-bold">Welcome</h1>
                         <h1 class="mb-5 text-2xl font-bold">Warehouse Management system</h1>
-                        <button class="btn btn-primary">Get Started</button>
+                        <button class="btn bg-indigo-500 hover:bg-indigo-600 border-0">Get Started</button>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const AddItems = () => {
         console.log(product);
 
         //send data to the server
-        fetch('http://localhost:5000/add-product', {
+        fetch('https://manageware-server.vercel.app/add-product', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

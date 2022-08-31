@@ -4,12 +4,12 @@ import {useQuery} from 'react-query';
 const useProducts = () => {
     // const [products, setProducts] = useState();
 
-    const {data:products, isLoading, refetch} = useQuery('products', ()=> fetch('http://localhost:5000/products', {
+    const {data:products, isLoading, refetch} = useQuery('products', ()=> fetch('https://manageware-server.vercel.app/products', {
         method:'GET',
     }).then(res=>res.json()))
 
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/products')
+    //     fetch('https://manageware-server.vercel.app/products')
     //     .then(res=>res.json())
     //     .then(data=>setProducts(data))
     // },[])

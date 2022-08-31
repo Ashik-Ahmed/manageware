@@ -11,7 +11,7 @@ const useToken = user => {
         };
 
         if (email) {
-            fetch(`http://localhost:5000/login`, {
+            fetch(`https://manageware-server.vercel.app/login`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
