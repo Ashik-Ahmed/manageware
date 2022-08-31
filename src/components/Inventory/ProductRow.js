@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductRow = ({product, setModal}) => {
 
-    const {_id, name, image, description, supplier, price, quantity} = product;
+    const {_id, name, supplier, price, quantity} = product;
 
     return (
         <tr>

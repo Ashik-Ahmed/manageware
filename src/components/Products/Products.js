@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 import Loading from '../Shared/Loading/Loading';
 import Product from './Product';

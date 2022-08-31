@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useProducts from '../../hooks/useProducts';
 import Loading from '../Shared/Loading/Loading';
 import DeleteModal from './DeleteModal';
 import DetailsModal from './DetailsModal';
 import ProductRow from './ProductRow';
 import {useQuery} from 'react-query';
-import ReactPaginate from 'react-paginate';
 
 const Inventory = () => {
 

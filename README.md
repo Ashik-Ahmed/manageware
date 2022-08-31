@@ -20,4 +20,4 @@ JavaScript, ES6, React JS, Tailwind CSS, Daisy UI, Firebase Authentication, Reac
 
 
 ### backend
-NodeJS, Express.js, MongoDB, REST API, Vercel.
+JWT, NodeJS, Express.js, MongoDB, REST API, Vercel.
