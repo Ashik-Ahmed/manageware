@@ -67,11 +67,11 @@ const Navbar = () => {
                         authUser ? 
                         
                         <div>
-                            <button onClick={handleSignout} className='btn btn-sm bg-accent border-0'>Signout</button>
+                            <button onClick={handleSignout} className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0'>Signout</button>
                             <p className='text-xs'>{authUser.email}</p>
                         </div>
                         :
-                        <Link to='/login' className="btn btn-sm bg-accent border-0">Login</Link>
+                        <Link to='/login' className="btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0">Login</Link>
                     }
                 </div>
             </div>

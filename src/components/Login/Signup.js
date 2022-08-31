@@ -196,7 +196,7 @@ const Signup = () => {
                                 </div>
 
                                 <div class="card-actions justify-end">
-                                    <input type='submit' class="btn btn-primary w-full" value='Sign Up'></input>
+                                    <input type='submit' class="btn bg-indigo-500 hover:bg-indigo-600 border-0 w-full" value='Sign Up'></input>
                                 </div>
                             </div>
                         </div>

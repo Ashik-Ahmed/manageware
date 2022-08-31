@@ -136,10 +136,10 @@ const Login = () => {
                                     </label>
                                 </div>
                                 <div class="card-actions justify-end">
-                                    <input type='submit' class="btn btn-primary w-full" value='Login'></input>
+                                    <input type='submit' class="btn bg-indigo-500 hover:bg-indigo-600 border-0 w-full" value='Login'></input>
                                 </div><div class="divider">OR</div>
                                 <div class="form-control">
-                                    <button onClick={handleSignInWithGoogle} class="btn btn-primary gap-3"><FaGoogle />  Sign in using Google</button>
+                                    <button onClick={handleSignInWithGoogle} class="btn bg-indigo-500 hover:bg-indigo-600 border-0 gap-3"><FaGoogle />  Sign in using Google</button>
                                 </div>
                             </div>
                         </div>

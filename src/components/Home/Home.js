@@ -23,7 +23,7 @@ const Home = () => {
                 </div>
 
 
-                <div className='flex justify-between px-24'>
+                <div className='md:flex justify-between px-28'>
                 <div class="avatar indicator">
                 <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item p-16"/> 
                 <div class="w-72 h-72 object-cover rounded-lg">
