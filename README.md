@@ -1,6 +1,6 @@
 # ManageWare - Warehouse management system
 
-Live view link: [Click here](https://manageware-40e96.web.app/).
+Live view: [Click here](https://manageware-40e96.web.app/).
 
 ## Available Features
 

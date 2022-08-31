@@ -55,8 +55,6 @@ const Inventory = () => {
         }).then(res=>res.json()).then(data=>{
             refetch();
         })
-
-        console.log("deleted product", id)
     }
 
     if(isLoading){
