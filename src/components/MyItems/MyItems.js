@@ -20,7 +20,7 @@ const MyItems = () => {
     //  useEffect(() => {
     //     const getProducts = async () => {
     //         const email = authUser.email;
-    //         const url = `https://manageware-server.vercel.app/myproducts?email=${email}`;
+    //         const url = `https://manageware-server.onrender.com/myproducts?email=${email}`;
 
     //         fetch(url, {
     //             headers: {
@@ -37,7 +37,7 @@ const MyItems = () => {
 
 
     //get products by user email
-    const {data:myProducts, isLoading, refetch} = useQuery('myProducts', ()=> fetch(`https://manageware-server.vercel.app/myproducts?email=${authUser.email}`,{
+    const {data:myProducts, isLoading, refetch} = useQuery('myProducts', ()=> fetch(`https://manageware-server.onrender.com/myproducts?email=${authUser.email}`,{
         method:'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -47,7 +47,7 @@ const MyItems = () => {
 
     //product delete
     const handleProductDelete =(id)=>{
-        fetch(`https://manageware-server.vercel.app/delete-product/${id}`, {
+        fetch(`https://manageware-server.onrender.com/delete-product/${id}`, {
             method:'DELETE',
         }).then(res=>res.json()).then(data=>{
             refetch();

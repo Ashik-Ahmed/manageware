@@ -11,7 +11,7 @@ const ProductDetail = () => {
     // const [updatedQuantity, setUpdatedQuantity] = useState();
     let updatedQuantity;
 
-    const {data:product, isLoading, refetch} = useQuery('product', ()=>fetch(`https://manageware-server.vercel.app/product/${id}`,{
+    const {data:product, isLoading, refetch} = useQuery('product', ()=>fetch(`https://manageware-server.onrender.com/product/${id}`,{
         method:'GET',
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +38,7 @@ const ProductDetail = () => {
    const handleProductUpdate=()=>{
     const updatedProduct = {updatedQuantity};
 
-        const url=`https://manageware-server.vercel.app/update-product/${id}`;
+        const url=`https://manageware-server.onrender.com/update-product/${id}`;
 
         fetch(url, {
             method:'PUT',

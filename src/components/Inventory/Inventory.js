@@ -18,7 +18,7 @@ const Inventory = () => {
 
     //getting total product count from DB
     useEffect(()=>{
-        fetch('https://manageware-server.vercel.app/product-count')
+        fetch('https://manageware-server.onrender.com/product-count')
         .then(res=>res.json())
         .then(data=>{
             const count=data.count;
@@ -28,7 +28,7 @@ const Inventory = () => {
     },[size])
 
     //loading products from server
-    const {data:products, isLoading, refetch} = useQuery('products', ()=> fetch(`https://manageware-server.vercel.app/products?page=${page}&size=${size}`, {
+    const {data:products, isLoading, refetch} = useQuery('products', ()=> fetch(`https://manageware-server.onrender.com/products?page=${page}&size=${size}`, {
         method:'GET',
     }).then(res=>res.json()))
 
@@ -50,7 +50,7 @@ const Inventory = () => {
 
     //product delete
     const handleProductDelete =(id)=>{
-        fetch(`https://manageware-server.vercel.app/delete-product/${id}`, {
+        fetch(`https://manageware-server.onrender.com/delete-product/${id}`, {
             method:'DELETE',
         }).then(res=>res.json()).then(data=>{
             refetch();
