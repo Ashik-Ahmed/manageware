@@ -27,7 +27,7 @@ const Home = () => {
                 <div class="avatar indicator">
                 <img src='https://i.ibb.co/wL7zFj6/best-selling.png' alt='indicator' class="indicator-item p-16"/> 
                 <div class="w-72 h-72 object-cover rounded-lg">
-                    <img src="https://i.ibb.co/9GRyXwV/7.jpg" alt='best' className='object-cover'/>
+                    <img src="https://i.ibb.co/9GRyXwV/7.jpg" alt='best'/>
                     <button className='btn btn-sm bg-indigo-500 hover:bg-indigo-600 border-0 indicator-item px-10 indicator-bottom indicator-center'>Details</button>
                 </div>
                 </div>

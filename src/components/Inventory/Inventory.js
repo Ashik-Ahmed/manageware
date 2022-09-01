@@ -14,6 +14,7 @@ const Inventory = () => {
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
+    const [totalProductCount, setTotalProductCount] = useState(0);
 
 
     //getting total product count from DB
@@ -21,11 +22,11 @@ const Inventory = () => {
         fetch('https://manageware-server.onrender.com/product-count')
         .then(res=>res.json())
         .then(data=>{
-            const count=data.count;
-            const pages=Math.ceil(count/size);
+            setTotalProductCount(data.count);
+            const pages=Math.ceil(totalProductCount/size);
             setPageCount(pages);
         })
-    },[size])
+    },[size, totalProductCount])
 
     //loading products from server
     const {data:products, isLoading, refetch} = useQuery('products', ()=> fetch(`https://manageware-server.onrender.com/products?page=${page}&size=${size}`, {
@@ -97,6 +98,9 @@ const Inventory = () => {
                     </tbody>
                 </table>
                 <div className='flex justify-end mt-3 mr-4'>
+                    <div className='mr-4'>
+                        <p>Showing: {products.length} of {totalProductCount} Products</p>
+                    </div>
                     {
                         [...Array(pageCount).keys()].map(number=><button onClick={()=>setPage(number)} className='btn btn-xs btn-square btn-success border-0 mr-2'>{number+1}</button>)
                     }
