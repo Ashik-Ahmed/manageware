@@ -11,51 +11,31 @@ import Loading from '../Shared/Loading/Loading';
 const MyItems = () => {
 
     const [authUser] = useAuthState(auth);
-    // const [products, setProducts] =useState();
     const [modal, setModal] = useState(null);
 
 
 
-     //get products by user email
-    //  useEffect(() => {
-    //     const getProducts = async () => {
-    //         const email = authUser.email;
-    //         const url = `https://manageware-server.onrender.com/myproducts?email=${email}`;
-
-    //         fetch(url, {
-    //             headers: {
-    //                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //             }
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => setProducts(data))
-
-    //     }
-    //     getProducts();
-
-    // }, [authUser])
-
-
     //get products by user email
-    const {data:myProducts, isLoading, refetch} = useQuery('myProducts', ()=> fetch(`https://manageware-server.onrender.com/myproducts?email=${authUser.email}`,{
-        method:'GET',
+    const { data: myProducts, isLoading, refetch } = useQuery('myProducts', () => fetch(`https://manageware-server.onrender.com/myproducts?email=${authUser.email}`, {
+        method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        },        
-    }).then(res=>res.json()))
+        },
+    }).then(res => res.json()))
+
 
 
     //product delete
-    const handleProductDelete =(id)=>{
+    const handleProductDelete = (id) => {
         fetch(`https://manageware-server.onrender.com/delete-product/${id}`, {
-            method:'DELETE',
-        }).then(res=>res.json()).then(data=>{
+            method: 'DELETE',
+        }).then(res => res.json()).then(data => {
             refetch();
         })
     }
 
-    if(isLoading){
-        return <Loading/>
+    if (isLoading) {
+        return <Loading />
     }
 
     return (
@@ -67,29 +47,29 @@ const MyItems = () => {
                 </div>
                 <table class="table table-fixed table-compact table-zebra w-full">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Supplier</th>
-                        <th>Action</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Supplier</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    {
-                        myProducts && myProducts.map(product=> <ProductRow key={product._id} product={product} setModal={setModal}></ProductRow>)
-                    }
-                    {
-                         
-                        modal && <DeleteModal product={modal} handleProductDelete={handleProductDelete}></DeleteModal>
-                        
-                    }
+                        {
+                            myProducts && myProducts?.map(product => <ProductRow key={product._id} product={product} setModal={setModal}></ProductRow>)
+                        }
+                        {
 
-                    {
-                         
-                        modal && <DetailsModal product={modal}></DetailsModal>
-                        
-                    }
+                            modal && <DeleteModal product={modal} handleProductDelete={handleProductDelete}></DeleteModal>
+
+                        }
+
+                        {
+
+                            modal && <DetailsModal product={modal}></DetailsModal>
+
+                        }
                     </tbody>
                 </table>
             </div>
