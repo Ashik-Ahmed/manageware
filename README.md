@@ -2,6 +2,11 @@
 
 Live view: [Click here](https://manageware-40e96.web.app/).
 
+### Login Credentials
+
+* Email: test@gmail.com
+* Password: test123
+
 ## Available Features
 
 * Signup and Login with email and password as well as social login using Google
